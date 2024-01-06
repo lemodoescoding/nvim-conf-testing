@@ -1,1 +1,2 @@
-local opt = vim.opt
+require("muj.core.options")
+require("muj.core.keymaps")
