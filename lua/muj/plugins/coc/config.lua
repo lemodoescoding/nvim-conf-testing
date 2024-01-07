@@ -41,11 +41,13 @@ keyset("n", "[g", "<Plug>(coc-diagnostic-prev)", {silent = true})
 keyset("n", "]g", "<Plug>(coc-diagnostic-next)", {silent = true})
 
 -- GoTo code navigation
-keyset("n", "gd", "<Plug>(coc-definition)", {silent = true})
-keyset("n", "gy", "<Plug>(coc-type-definition)", {silent = true})
-keyset("n", "gi", "<Plug>(coc-implementation)", {silent = true})
-keyset("n", "gr", "<Plug>(coc-references)", {silent = true})
+keyset("n", "<leader>gd", "<Plug>(coc-definition)", {silent = true})
+keyset("n", "<leader>gt", "<Plug>(coc-type-definition)", {silent = true})
+keyset("n", "<leader>gi", "<Plug>(coc-implementation)", {silent = true})
+keyset("n", "<leader>gr", "<Plug>(coc-references)", {silent = true})
 
+-- Formatting Force
+keyset("n", "<leader>pp", ":CocCommand prettier.forceFormatDocument<CR>")
 
 -- Use K to show documentation in preview window
 function _G.show_docs()
@@ -75,8 +77,8 @@ keyset("n", "<leader>rn", "<Plug>(coc-rename)", {silent = true})
 
 
 -- Formatting selected code
-keyset("x", "<leader>cf", "<Plug>(coc-format-selected)", {silent = true})
-keyset("n", "<leader>cf", "<Plug>(coc-format-selected)", {silent = true})
+keyset("x", "<leader>cf", "<Plug>(coc-format-selected)", { silent = true })
+keyset("n", "<leader>cf", "<Plug>(coc-format-selected)", { silent = true })
 
 
 -- Setup formatexpr specified filetype(s)
@@ -169,7 +171,7 @@ local opts = {silent = true, nowait = true}
 -- Show all diagnostics
 keyset("n", "<leader>ca", ":<C-u>CocList diagnostics<cr>", opts)
 -- Manage extensions
-keyset("n", "<leader>cs", ":<C-u>CocList extensions<cr>", opts)
+keyset("n", "<leader>ce", ":<C-u>CocList extensions<cr>", opts)
 -- Show commands
 keyset("n", "<leader>cc", ":<C-u>CocList commands<cr>", opts)
 -- Find symbol of current document
