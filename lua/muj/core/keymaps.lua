@@ -15,3 +15,6 @@ keymap.set("n", "<leader>to", ":tabnew<CR>")
 keymap.set("n", "<leader>tn", ":tabn<CR>")
 keymap.set("n", "<leader>tp", ":tabp<CR>")
 keymap.set("n", "<leader>tx", ":tabclose<CR>")
+
+-- tab maximizer (need maximizer plugin enaabled)
+keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
