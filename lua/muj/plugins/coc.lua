@@ -90,18 +90,18 @@ return {
     --     end
     --   end,
     --   opts
-    -- )
 
-    -- keyset("i", "<CR>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
-    keyset("i", "<CR>",
-      function()
-        if vim.fn["coc#pum#visible"]() == 1 then
-          return vim.fn["coc#pum#confirm"]()
-        end
-        return "\\<CR>"
-      end,
-      opts
-    )
+
+    keyset("i", "<CR>", [[coc#pum#visible() && coc#pum#info()['index'] != -1 ? coc#pum#confirm() : "\<C-g>u\<CR>]], { silent = true, expr = true })
+    -- keyset("i", "<CR>",
+    --   function()
+    --     if vim.fn["coc#pum#visible"]() == 1 then
+    --       return vim.fn["coc#pum#confirm"]()
+    --     end
+    --     return "\\<CR>"
+    --   end,
+    --   opts
+    -- )
 
     keyset("i", "<C-space>",
       function()

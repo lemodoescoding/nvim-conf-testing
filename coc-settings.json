@@ -1,5 +1,6 @@
 {
-  "snippets.ultisnips.pythonPrompt": false
+  "snippets.ultisnips.pythonPrompt": false,
+  "suggest.noselect": false,
   "suggest.completionItemKindLabels": {
     "module": "",
     "variable": "󰀫",
@@ -26,6 +27,6 @@
     "reference": "",
     "typeParameter": "",
     "default": "",
-  }
+  },
 }
 
