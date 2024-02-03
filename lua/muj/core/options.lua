@@ -26,8 +26,3 @@ opt.splitright = true
 opt.splitbelow = true
 
 opt.iskeyword:append("-")
-
-vim.opt.backup = false
-vim.opt.writebackup = false
-
-vim.opt.updatetime = 500
