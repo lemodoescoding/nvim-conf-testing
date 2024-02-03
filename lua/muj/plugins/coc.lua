@@ -98,6 +98,7 @@ return {
         if vim.fn["coc#pum#visible"]() == 1 then
           return vim.fn["coc#pum#confirm"]()
         end
+        return "\\<CR>"
       end,
       opts
     )
@@ -108,6 +109,8 @@ return {
       end,
       { silent = true, expr = true }
     )
+
+    keyset("n", "K", [[lua _G.show_docs()<CR>]], { silent = true })
   end,
   opt = true,
 }
