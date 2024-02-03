@@ -1,3 +1,31 @@
 {
   "snippets.ultisnips.pythonPrompt": false
+  "suggest.completionItemKindLabels": {
+    "module": "",
+    "variable": "󰀫",
+    "constant": "󰏿",
+    "method": "󰆧",
+    "function": "󰊕",
+    "struct": "",
+    "class": "󰠱",
+    "interface": "",
+    "text": "󰉿",
+    "enum": "",
+    "enumMember": "",
+    "color": "󰏘",
+    "property": "󰜢",
+    "field": " ",
+    "unit": "󰑭",
+    "file": "󰈙",
+    "value": "",
+    "event": "",
+    "folder": "󰉋",
+    "keyword": "󰌋",
+    "snippet": "",
+    "operator": "󰆕",
+    "reference": "",
+    "typeParameter": "",
+    "default": "",
+  }
 }
+
