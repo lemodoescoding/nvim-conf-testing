@@ -91,8 +91,7 @@ return {
     --   end,
     --   opts
 
-
-    keyset("i", "<CR>", [[coc#pum#visible() && coc#pum#info()['index'] != -1 ? coc#pum#confirm() : "\<C-g>u\<CR>]], { silent = true, expr = true })
+    keyset("i", "<CR>", [[coc#pum#visible() ? coc#pum#confirm() : "\<CR>" ]], { silent = true, expr = true })
     -- keyset("i", "<CR>",
     --   function()
     --     if vim.fn["coc#pum#visible"]() == 1 then
@@ -111,6 +110,6 @@ return {
     )
 
     keyset("n", "K", [[lua _G.show_docs()<CR>]], { silent = true })
-  end,
+end,
   opt = true,
 }
