@@ -65,42 +65,16 @@ return {
     local opts = { silent = true, noremap = true, expr = true, replace_keycodes = false, }
     local keyset = vim.keymap.set
 
-    -- basic configuration of suggestion and autocomplete
+    -- basic configuration of suggestion and autocoxplete
     keyset("i", "<TAB>", 'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', opts)
-    -- keyset("i", "<TAB>",
-    --   function()
-    --     if vim.fn["coc#pum#visible"]() == 1 then
-    --       return vim.fn["coc#pum#next"](1)
-    --     end
-    --     if _G.check_back_space() == 1 then
-    --       return vim.fn["coc#refresh"]()
-    --     end
-    --     return "<TAB>"
-    --   end,
-    --   opts
-    -- )
 
     keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
-    -- keyset("i", "<S-Tab>",
-    --   function()
-    --     if vim.fn["coc#pum#visible"]() == 1 then
-    --       return vim.fn["coc#pum#prev"](1)
-    -- else
-    --     return "<S-Tab>"
-    --     end
-    --   end,
-    --   opts
 
+    -- keyset("i", "<C-j>", [[coc#pum#scroll(4)]], opts)
+
+    -- keyset("i", "<C-k>", [[coc#pum#scroll(-4)]], opts)
+    --
     keyset("i", "<CR>", [[coc#pum#visible() ? coc#pum#confirm() : "\<CR>" ]], { silent = true, expr = true })
-    -- keyset("i", "<CR>",
-    --   function()
-    --     if vim.fn["coc#pum#visible"]() == 1 then
-    --       return vim.fn["coc#pum#confirm"]()
-    --     end
-    --     return "\\<CR>"
-    --   end,
-    --   opts
-    -- )
 
     keyset("i", "<C-space>",
       function()
@@ -109,7 +83,20 @@ return {
       { silent = true, expr = true }
     )
 
+    -- open documentation
     keyset("n", "K", [[lua _G.show_docs()<CR>]], { silent = true })
+
+    keyset("n", "[g", "<Plug>(coc-diagnostic-prev)<CR>", { silent = true })
+    keyset("n", "]g", "<Plug>(coc-diagnostic-next)<CR>", { silent = true })
+
+    -- Goto code navigation
+    keyset("n", "<leader>gd", "<Plug>(coc-definition)<CR>", { silent = true })
+    keyset("n", "<leader>gt", "<Plug>(coc-type-definition)<CR>", { silent = true })
+    keyset("n", "<leader>gi", "<Plug>(coc-implementation)<CR>", { silent = true })
+    keyset("n", "<leader>gr", "<Plug>(coc-references)<CR>", { silent = true })
+
+    keyset("n", "<C-f>", [[coc#float#has_scroll() ? coc#float#scroll(1, 1) : "\<Right>"]], { silent = true, nowait = true, expr = true })
+    keyset("n", "<C-b>", [[coc#float#has_scroll() ? coc#float#scroll(0, -1) : "\<Right>"]], { silent = true, nowait = true, expr = true })
 end,
   opt = true,
 }
