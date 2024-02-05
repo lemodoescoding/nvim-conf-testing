@@ -70,11 +70,7 @@ return {
 
     keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
 
-    -- keyset("i", "<C-j>", [[coc#pum#scroll(4)]], opts)
-
-    -- keyset("i", "<C-k>", [[coc#pum#scroll(-4)]], opts)
-    --
-    keyset("i", "<CR>", [[coc#pum#visible() ? coc#pum#confirm() : "\<CR>" ]], { silent = true, expr = true })
+    keyset("i", "<CR>", [[coc#pum#visible() ? coc#pum#confirm() : "\<CR>"]], { silent = true, expr = true })
 
     keyset("i", "<C-space>",
       function()
